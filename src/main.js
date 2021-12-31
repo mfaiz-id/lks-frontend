@@ -1,15 +1,19 @@
 import Vue from 'vue'
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
+//import router
+import router from './router'
+
+//import Bootstrap, Popper, jQuery
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'jquery/dist/jquery.min'
+import 'popper.js/dist/popper.min'
+import 'bootstrap/dist/js/bootstrap.min'
 
-Vue.use(BootstrapVue)
-Vue.use(BootstrapVueIcons)
 import App from './App.vue'
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

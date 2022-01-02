@@ -1,12 +1,22 @@
 <template>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{barangnya.nama}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-           <button type="button" class="btn btn-primary">Detail</button>
-           <button type="button" class="btn btn-warning">Edit</button>
-           <button type="button" class="btn btn-danger">Hapus</button>
+            <h5 class="card-title">{{barangnya.nama_barang}}</h5>
+            <table border="0" width="100%" cellpadding="10" cellspacing="0">
+                <tr>
+                    <th align="left">Harga</th>
+                    <td>:</td>
+                    <td>{{barangnya.harga}}</td>
+                </tr>
+                <tr>
+                    <th align="left">Stok</th>
+                    <td>:</td>
+                    <td>{{barangnya.stok}}</td>
+                </tr>
+            </table>
+           <button type="button" class="btn btn-sm btn-primary">Detail</button> &nbsp;
+           <button type="button" class="btn btn-sm btn-warning" @click="editData">Edit</button> &nbsp;
+           <button type="button" class="btn btn-sm btn-danger">Hapus</button> &nbsp;
         </div>
     </div>
 </template>
@@ -17,6 +27,11 @@ export default {
         barangnya:{
             type:Object,
             required:true
+        }
+    },
+    methods:{
+        editData(){
+            this.$emit('ceeditbarang', this.barangnya)
         }
     }
 }
